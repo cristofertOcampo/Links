@@ -1,5 +1,7 @@
 const express = require("express");
 const { create } = require("express-handlebars");
+require('dotenv').config();
+require('./dataBase/db');
 
 const app = express();
 
@@ -13,9 +15,10 @@ app.set("view engine", ".hbs");
 app.set("views", "./views");
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({extended:true}))
 app.use("/", require('./routes/home'));
 app.use("/auth", require('./routes/auth'));
 
 
-const PUERTO = 8080;
-app.listen(PUERTO, ()=> {`server on port ${PUERTO}`});
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, ()=> {console.log(`Server on port ${PORT}`)});
