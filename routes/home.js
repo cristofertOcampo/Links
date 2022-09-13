@@ -14,6 +14,6 @@ router.post('/', urlValidar, agregarUrl);
 router.get('/eliminar/:id', eliminarUrl);
 router.get('/editar/:id', editarUrlForm);
 router.post('/editar/:id',urlValidar, editarUrl);
-router.get('/:shortUrl', redireccionamiento)
+router.get('/:shortURL', redireccionamiento);
 
 module.exports = router;

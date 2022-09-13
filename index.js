@@ -22,3 +22,6 @@ app.use("/auth", require('./routes/auth'));
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, ()=> {console.log(`Server on port ${PORT}`)});
+
+
+// URI=mongodb+srv://ocampocristofert:ocampomendoza3012@cluster0.3vxxlum.mongodb.net/dbUrlCris
